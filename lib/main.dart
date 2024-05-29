@@ -62,7 +62,8 @@ class _MyAppState extends State<MyApp> {
                     Align(
                       alignment: Alignment.center,
                       child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        mainAxisSize: MainAxisSize.min,
+                        crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           Transform.scale(
                             scale: 0.8, // scale down the text
@@ -76,7 +77,8 @@ class _MyAppState extends State<MyApp> {
                           Transform.scale(
                             scale: 0.8, // scale down the icon
                             child: IconButton(
-                              icon: const Icon(Icons.add_shopping_cart),
+                              icon: const Expanded(
+                                  child: Icon(Icons.add_shopping_cart)),
                               onPressed: () {
                                 _addProductToSelected(product);
                                 final snackBar = SnackBar(
